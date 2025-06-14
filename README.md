@@ -9,7 +9,10 @@ A conversational AI chatbot fine-tuned from **Qwen2-1.5B** (by Qwen Team, Alibab
 - Due to model size, weights are hosted on Google Drive:  
 - 👉 [Download Qwen2-1.5B Fine-Tuned Chatbot](https://drive.google.com/drive/folders/1nP0fparpJdVbfXxKPuNEqyQIczvZACj5?usp=sharing)
 ---
+### 🧪 Demo
 
+![Demo](https://raw.githubusercontent.com/HitDrama/Fine-Tuned-Chatbot-with-Qwen2-1.5B/main/static/qwen.gif)
+---
 ### 🧠 Model Loading with Quantization (4-bit)
 ```python
 quant_config = BitsAndBytesConfig(
@@ -25,6 +28,7 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map="auto",
 )
 ```
+---
 ### 📚 Dataset
 ```python
 dataset = load_dataset("tatsu-lab/alpaca", split="train[:2000]")
@@ -49,11 +53,7 @@ lora_config = LoraConfig(
 model = get_peft_model(model, lora_config)
 ```
 ---
-### 🧪 Demo
-
-![Demo](https://raw.githubusercontent.com/HitDrama/Fine-Tuned-Chatbot-with-Qwen2-1.5B/main/static/qwen.gif)
 
 
----
 ### 👤 Author
 Đặng Tố Nhân Developer / Fine-Tuning Engineer
